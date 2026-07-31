@@ -62,14 +62,13 @@ $RegKeys = @(
     "HKLM\SOFTWARE\Native Instruments", "HKLM\SOFTWARE\Waves", "HKLM\SOFTWARE\Spectrasonics",
     "HKLM\SOFTWARE\XLN Audio", "HKLM\SOFTWARE\SoundToys", "HKLM\SOFTWARE\Positive Grid",
     # 32-битные плагины на 64-битной Windows часто пишут ключи не в HKLM\SOFTWARE\...,
-    # а в HKLM\SOFTWARE\WOW6432Node\... — Test-Path просто пропустит, если ключа нет.
+    # а в HKLM\SOFTWARE\WOW6432Node\... - Test-Path просто пропустит, если ключа нет.
     "HKLM\SOFTWARE\WOW6432Node\FabFilter", "HKLM\SOFTWARE\WOW6432Node\Image-Line",
     "HKLM\SOFTWARE\WOW6432Node\iZotope", "HKLM\SOFTWARE\WOW6432Node\Native Instruments",
     "HKLM\SOFTWARE\WOW6432Node\Waves", "HKLM\SOFTWARE\WOW6432Node\Spectrasonics",
     "HKLM\SOFTWARE\WOW6432Node\XLN Audio", "HKLM\SOFTWARE\WOW6432Node\SoundToys",
     "HKLM\SOFTWARE\WOW6432Node\Positive Grid",
 
-    # --- Добавлено под новые папки из $Mapping (BIAS, Digidesign, BorisFX, Red Giant, Maxon, ProductionCrate, RubberMonkey, RWBYTE/Rowbyte, redshift) ---
     "HKCU\Software\BIAS", "HKCU\Software\Digidesign", "HKCU\Software\BorisFX",
     "HKCU\Software\Red Giant", "HKCU\Software\Maxon", "HKCU\Software\ProductionCrate",
     "HKCU\Software\RubberMonkey", "HKCU\Software\RWBYTE", "HKCU\Software\Rowbyte",
@@ -87,7 +86,6 @@ $RegKeys = @(
     "HKLM\SOFTWARE\WOW6432Node\Rowbyte", "HKLM\SOFTWARE\WOW6432Node\redshift",
     "HKLM\SOFTWARE\WOW6432Node\Otoy",
 
-    # --- Добавлено по результатам просмотра реального реестра (скриншоты HKCU/HKLM/WOW6432Node) ---
     "HKCU\Software\AirMusicTech", "HKCU\Software\Cableguys", "HKCU\Software\aescripts.com",
     "HKCU\Software\Sonic Charge", "HKCU\Software\SonicCat", "HKCU\Software\Roland Cloud",
     "HKCU\Software\Voukoder", "HKCU\Software\Synchro Arts", "HKCU\Software\RedGiantSoftware",
@@ -169,7 +167,7 @@ $Mapping = @(
     @{ Source = "C:\Program Files\Xfer Records";          Target = "$SoundBase\Xfer Records" },
     @{ Source = "C:\Program Files\dSONIQ";                Target = "$SoundBase\dSONIQ" },
     @{ Source = "C:\Program Files\iZotope";               Target = "$SoundBase\iZotope" },
-
+	@{ Source = "C:\Program Files\_uninstaller"; Target = "D:\Program Files\_uninstaller" },
     # --- ЗВУКОВЫЕ ПЛАГИНЫ (x86) ---
     @{ Source = "C:\Program Files (x86)\Waves";                     Target = "$SoundBase\Waves_x86" },
     @{ Source = "C:\Program Files (x86)\BIAS";                      Target = "$SoundBase\BIAS_x86" },
@@ -194,7 +192,7 @@ $Mapping = @(
     # --- ВИДЕО ПЛАГИНЫ (доп.) ---
     @{ Source = "C:\Program Files\Adobe\Common\Plug-ins\7.0\MediaCore";                          Target = "$VideoBase\Adobe_MediaCore_Plugins" },
     @{ Source = "C:\Program Files\Adobe\Adobe After Effects 2026\Support Files\Plug-ins";        Target = "$VideoBase\AfterEffects_Native_Plugins" },
-    @{ Source = "D:\Program Files\Adobe After Effects\Adobe After Effects 2026\Support Files\Plug-ins"; Target = "$VideoBase\AfterEffects_Native_Plugins" },
+    #@{ Source = "D:\Program Files\Adobe After Effects\Adobe After Effects 2026\Support Files\Plug-ins"; Target = "$VideoBase\AfterEffects_Native_Plugins" },
     @{ Source = "C:\Program Files\Maxon";                     Target = "$VideoBase\Maxon" },
     @{ Source = "C:\Program Files\Maxon Cinema 4D 2026";       Target = "$VideoBase\Maxon Cinema 4D 2026" },
 	
@@ -342,13 +340,10 @@ $Mapping = @(
     @{ Source = "C:\Users\$TargetUser\AppData\Local\VideoCopilot";                Target = "D:\Users\$TargetUser\AppData\Local\VideoCopilot" },
     @{ Source = "C:\Users\$TargetUser\AppData\Local\Xfer";                        Target = "D:\Users\$TargetUser\AppData\Local\Xfer" },
 
-    # --- СКРИПТЫ И РАСШИРЕНИЯ AFTER EFFECTS (доп. — 64-битный CEP, UXP, автозапуск) ---
-    # ВАЖНО: переносим только ScriptUI Panels и Startup (сюда кладут файлы сторонние авторы),
-    # а не всю папку Scripts целиком — внутри неё лежит ещё и "Sample Scripts" от самой Adobe,
-    # которые лучше не трогать симлинком (риск при repair-install/деинсталляции AE).
-    @{ Source = "D:\Program Files\Adobe After Effects\Adobe After Effects 2026\Support Files\Scripts\ScriptUI Panels"; Target = "$ScriptsFolder\ScriptUI Panels" },
+    # --- СКРИПТЫ И РАСШИРЕНИЯ AFTER EFFECTS (доп. - 64-битный CEP, UXP, автозапуск) ---
+    #@{ Source = "D:\Program Files\Adobe After Effects\Adobe After Effects 2026\Support Files\Scripts\ScriptUI Panels"; Target = "$ScriptsFolder\ScriptUI Panels" },
     @{ Source = "C:\Program Files\Adobe\Adobe After Effects 2026\Support Files\Scripts\ScriptUI Panels";               Target = "$ScriptsFolder\ScriptUI Panels" },
-    @{ Source = "D:\Program Files\Adobe After Effects\Adobe After Effects 2026\Support Files\Scripts\Startup"; Target = "$ScriptsFolder\Startup" },
+    #@{ Source = "D:\Program Files\Adobe After Effects\Adobe After Effects 2026\Support Files\Scripts\Startup"; Target = "$ScriptsFolder\Startup" },
     @{ Source = "C:\Program Files\Adobe\Adobe After Effects 2026\Support Files\Scripts\Startup";               Target = "$ScriptsFolder\Startup" },
     @{ Source = "C:\Program Files\Common Files\Adobe\CEP\extensions";       Target = "D:\Files For All\Documents\Scripts For All\Video Scripts\extensions" },
     @{ Source = "C:\Program Files\Common Files\Adobe\UXP\extensions";       Target = "D:\Files For All\Documents\Scripts For All\Video Scripts\UXP extensions" },
@@ -363,34 +358,38 @@ $Mapping = @(
     @{ Source = "C:\Users\$TargetUser\.ProductionCrate";     Target = "D:\Users\$TargetUser\.ProductionCrate" },
     @{ Source = "C:\Users\$TargetUser\Lockdown";             Target = "D:\Users\$TargetUser\Lockdown" },
     @{ Source = "C:\Users\Public\Documents";                 Target = "D:\Users\Public\Documents" },
-	@{ Source = "C:\Users\Public\Waves Audio";                    Target = "D:\Users\Public\Waves Audio" },
-	@{ Source = "C:\Users\Public\Documents\Native Instruments";    Target = "D:\Users\Public\Documents\Native Instruments" },
-	@{ Source = "C:\Users\Public\Documents\NI Resources";          Target = "D:\Users\Public\Documents\NI Resources" },
-	@{ Source = "C:\Users\Public\Documents\Soundtoys";             Target = "D:\Users\Public\Documents\Soundtoys" }
+	@{ Source = "C:\Users\Public\Waves Audio";                    Target = "D:\Users\Public\Waves Audio" }
 )
 
-# 3.5. ДИНАМИЧЕСКИЙ ПОИСК И ОСТАНОВКА СЛУЖБ, ЧЬИ ФАЙЛЫ ЛЕЖАТ В ПЕРЕНОСИМЫХ ПАПКАХ
-# (решает проблему с Red Giant Service, Maxon Service и любыми другими похожими службами:
-#  их бинарник блокирует файл во время robocopy /MOVE, из-за чего Junction не создаётся.
-#  Вместо жёстко прописанных имён служб ищем ЛЮБУЮ службу, чей путь к exe начинается
-#  с одного из $Mapping.Source — и просто останавливаем её перед переносом.
-#  После создания Junction реестр службы (ImagePath) не меняется и продолжает указывать
-#  на C:\..., а NTFS reparse point прозрачно перенаправляет на D:\... — переустановка не нужна.)
+# 3.5. ДИНАМИЧЕСКИЙ ПОИСК СЛУЖБ, ЧЬИ ФАЙЛЫ ЛЕЖАТ В ПЕРЕНОСИМЫХ ПАПКАХ
+# (решает две разные проблемы:
+#  1) на ЭТОЙ системе - их бинарник блокирует файл во время robocopy /MOVE,
+#     из-за чего Junction не создаётся. Останавливаем перед переносом, запускаем после.
+#  2) на БУДУЩЕЙ чистой Windows (после restore.ps1) - сама служба не существует
+#     в Service Control Manager, пока никто не выполнит sc create/установщик.
+#     Регистрация службы живёт в HKLM\SYSTEM\CurrentControlSet\Services\<имя> -
+#     это ДРУГОЙ куст реестра, не HKLM\SOFTWARE, поэтому $RegKeys выше её не бэкапит.
+#     Экспортируем её здесь отдельно, чтобы restore.ps1 мог её восстановить.)
 Write-Host "`n>>> Ищем службы, чьи файлы лежат в переносимых папках..." -ForegroundColor Yellow
 
+$ServicesRegDir = "$RegDir\Services"
+New-Item -ItemType Directory -Path $ServicesRegDir -Force | Out-Null
+
 $StoppedServices = @()
+$MatchedServices = @()
 $AllServices = Get-CimInstance Win32_Service -ErrorAction SilentlyContinue | Where-Object { $_.PathName }
 
 foreach ($item in $Mapping) {
     $src = $item.Source.TrimEnd('\')
     foreach ($svc in $AllServices) {
-        # PathName может быть в кавычках и содержать аргументы — берём только путь к exe
+        # PathName может быть в кавычках и содержать аргументы - берём только путь к exe
         $exePath = $svc.PathName
         if ($exePath -match '^"([^"]+)"') { $exePath = $Matches[1] } else { $exePath = ($exePath -split ' -')[0].Trim() }
 
         if ($exePath -like "$src\*" -or $exePath -eq $src) {
+            $MatchedServices += $svc.Name
             if ($svc.State -eq 'Running') {
-                Write-Host "  [SERVICE] Останавливаю $($svc.Name) ($($svc.DisplayName)) — использует $src" -ForegroundColor Cyan
+                Write-Host "  [SERVICE] Останавливаю $($svc.Name) ($($svc.DisplayName)) - использует $src" -ForegroundColor Cyan
                 Stop-Service -Name $svc.Name -Force -ErrorAction SilentlyContinue
                 $StoppedServices += $svc.Name
             }
@@ -398,10 +397,17 @@ foreach ($item in $Mapping) {
     }
 }
 
-if ($StoppedServices.Count -eq 0) {
+$MatchedServices = $MatchedServices | Select-Object -Unique
+foreach ($svcName in $MatchedServices) {
+    $safeName = ($svcName -replace '[\\/:*?"<>|]', '_')
+    reg export "HKLM\SYSTEM\CurrentControlSet\Services\$svcName" "$ServicesRegDir\$safeName.reg" /y 2>$null
+    Write-Host "  [SERVICE-REG] Сохранена регистрация службы: $svcName" -ForegroundColor DarkCyan
+}
+
+if ($MatchedServices.Count -eq 0) {
     Write-Host "   Служб, привязанных к переносимым папкам, не найдено." -ForegroundColor Green
 } else {
-    Write-Host "   Остановлено служб: $($StoppedServices.Count)" -ForegroundColor Green
+    Write-Host "   Найдено служб: $($MatchedServices.Count), остановлено (были запущены): $($StoppedServices.Count)" -ForegroundColor Green
     Start-Sleep -Seconds 2
 }
 
@@ -417,6 +423,8 @@ $RestoreCommands += '}'
 $RestoreCommands += '$TargetUser = $env:USERNAME'
 $RestoreCommands += 'Write-Host ">>> Импорт ключей реестра..." -ForegroundColor Yellow'
 $RestoreCommands += 'Get-ChildItem "$PSScriptRoot\Registry_Keys\*.reg" -ErrorAction SilentlyContinue | ForEach-Object { reg import $_.FullName }'
+$RestoreCommands += 'Write-Host ">>> Восстановление служб (Red Giant Service, Maxon Service и т.п.)..." -ForegroundColor Yellow'
+$RestoreCommands += 'Get-ChildItem "$PSScriptRoot\Registry_Keys\Services\*.reg" -ErrorAction SilentlyContinue | ForEach-Object { reg import $_.FullName }'
 $RestoreCommands += 'Write-Host ">>> Восстановление Junction-симлинков..." -ForegroundColor Yellow'
 
 foreach ($item in $Mapping) {
@@ -428,7 +436,7 @@ foreach ($item in $Mapping) {
         if ($itemObj.Attributes -match "ReparsePoint") {
             # Папка уже симлинк (создан вручную или другим инструментом раньше).
             # Не трогаем её, но узнаём, куда она РЕАЛЬНО ведёт, и всё равно
-            # записываем восстановление — иначе на новой системе эта симлинка
+            # записываем восстановление - иначе на новой системе эта симлинка
             # просто потеряется, т.к. этот прогон её формально не обрабатывал.
             $realTarget = $null
             try { $realTarget = ($itemObj.Target | Select-Object -First 1) } catch {}
@@ -466,9 +474,17 @@ foreach ($item in $Mapping) {
 
         # Перенос файла через Robocopy
         robocopy "$src" "$tgt" /E /MOVE /BYTES /R:1 /W:1 /NJH /NJS /NDL /NC /NS | Out-Null
-        
-        # Проверка кода завершения Robocopy (от 0 до 7 — успех)
+
+        # Проверка кода завершения Robocopy (от 0 до 7 - успех)
         if ($LASTEXITCODE -lt 8) {
+            # Если исходная папка была пустой (0 файлов/подпапок), robocopy иногда
+            # не создаёт папку-назначение вообще, хотя формально отчитывается кодом 0.
+            # Досоздаём $tgt вручную, иначе New-Item -ItemType Junction ниже упадёт
+            # с "Cannot find path ... because it does not exist".
+            if (!(Test-Path $tgt)) {
+                New-Item -ItemType Directory -Path $tgt -Force -ErrorAction SilentlyContinue | Out-Null
+            }
+
             # Пробуем удалить оставшуюся пустую папки источника
             if (Test-Path $src) {
                 Remove-Item -Path $src -Recurse -Force -ErrorAction SilentlyContinue
@@ -476,7 +492,25 @@ foreach ($item in $Mapping) {
 
             # Создаем Junction только при успешном удалении оригинала
             if (!(Test-Path $src)) {
-                New-Item -ItemType Junction -Path $src -Target $tgt -ErrorAction Stop | Out-Null
+                # Небольшая пауза + повторные попытки: сразу после Remove-Item на том же пути
+                # New-Item -ItemType Junction иногда падает с "The file or directory is
+                # corrupted and unreadable" - это НЕ повреждение диска, а гонка состояний
+                # (NTFS/антивирус не успели отпустить удалённую запись). Пробуем ещё раз.
+                $junctionCreated = $false
+                for ($attempt = 1; $attempt -le 4; $attempt++) {
+                    try {
+                        Start-Sleep -Milliseconds (300 * $attempt)
+                        New-Item -ItemType Junction -Path $src -Target $tgt -ErrorAction Stop | Out-Null
+                        $junctionCreated = $true
+                        break
+                    } catch {
+                        Write-Host "   [RETRY $attempt/4] Junction для $src не создался ($($_.Exception.Message)). Повтор..." -ForegroundColor DarkYellow
+                    }
+                }
+                if (-not $junctionCreated) {
+                    Write-Host " [ERROR] Не удалось создать Junction для $src после 4 попыток. Папка перенесена на $tgt, но симлинка НЕТ - создай вручную: New-Item -ItemType Junction -Path `"$src`" -Target `"$tgt`"" -ForegroundColor Red
+                    continue
+                }
             } else {
                 Write-Host " [WARNING] В $src остались заблокированные файлы. Симлинк не создан." -ForegroundColor Red
                 $remaining = Get-ChildItem -Path $src -Recurse -File -ErrorAction SilentlyContinue
@@ -528,7 +562,7 @@ $AuditBases = @(
     "C:\Users\Public\Documents"
 )
 
-# Известные системные/не относящиеся к плагинам папки — не выводим их в отчет, чтобы не засорять лог
+# Известные системные/не относящиеся к плагинам папки - не выводим их в отчет, чтобы не засорять лог
 $ExcludePatterns = @(
     'Windows*','Microsoft*','WindowsApps','WindowsPowerShell','PowerShell','Reference Assemblies',
     'NVIDIA*','AMD*','AMD_Common','ASUS*','Realtek','Intel','Docker*','Internet Explorer','Windows Mail',
@@ -545,7 +579,7 @@ $ExcludePatterns = @(
     'Windows Kits','Microsoft.NET','Microsoft SDKs','Microsoft Visual Studio','ATI','ESET',
     '{*}','npm-cache','pip','uv','winutil','nwjs','Talon','Steam','Roblox','qBittorrent','obs-studio*',
     'Goldberg SteamEmu Saves','FACEIT*',
-    # стандартные папки профиля Windows — не плагины, не выводим в отчет
+    # стандартные папки профиля Windows - не плагины, не выводим в отчет
     'AppData','Documents','Desktop','Downloads','Music','Pictures','Videos',
     'Favorites','Links','Contacts','Saved Games','Searches','OneDrive*',
     '3D Objects','NetHood','PrintHood','SendTo','Cookies','IntelGraphicsProfiles',
@@ -581,11 +615,11 @@ if ($UnmappedReport.Count -gt 0) {
 
 # 6. СОЗДАНИЕ СКРИПТА ВОССТАНОВЛЕНИЯ RESTORE.PS1
 $RestoreCommands += 'Write-Host "`n[УСПЕХ] Все ключи и симлинки успешно восстановлены!" -ForegroundColor Green'
-$RestoreCommands += 'Write-Host "[ИНФО] Рекомендуется перезагрузить компьютер для применения всех ключей реестра." -ForegroundColor Yellow'
+$RestoreCommands += 'Write-Host "[ВАЖНО] Службы плагинов (Red Giant Service, Maxon Service и т.п.) зарегистрированы в реестре, но Windows подхватит их только ПОСЛЕ ПЕРЕЗАГРУЗКИ - Service Control Manager читает список служб один раз при старте системы." -ForegroundColor Yellow'
 [System.IO.File]::WriteAllLines($RestoreScriptPath, $RestoreCommands, [System.Text.Encoding]::UTF8)
 
 # 7. ЗАПУСК ОБРАТНО СЛУЖБ, ОСТАНОВЛЕННЫХ НА ШАГЕ 3.5
-# Junction уже создан, ImagePath службы не менялся — можно просто запускать как раньше.
+# Junction уже создан, ImagePath службы не менялся - можно просто запускать как раньше.
 if ($StoppedServices.Count -gt 0) {
     Write-Host "`n>>> Запускаем обратно ранее остановленные службы..." -ForegroundColor Yellow
     foreach ($svcName in ($StoppedServices | Select-Object -Unique)) {
@@ -593,7 +627,7 @@ if ($StoppedServices.Count -gt 0) {
             Start-Service -Name $svcName -ErrorAction Stop
             Write-Host "   [OK] $svcName запущена." -ForegroundColor Green
         } catch {
-            Write-Host "   [WARN] Не удалось запустить $svcName автоматически — возможно, запускается вручную или при первом обращении. Проверь после перезагрузки." -ForegroundColor DarkYellow
+            Write-Host "   [WARN] Не удалось запустить $svcName автоматически - возможно, запускается вручную или при первом обращении. Проверь после перезагрузки." -ForegroundColor DarkYellow
         }
     }
 }
