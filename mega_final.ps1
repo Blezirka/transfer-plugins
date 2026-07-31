@@ -1,4 +1,4 @@
-# =====================================================================
+﻿# =====================================================================
 # АВТОМАТИЧЕСКИЙ ПЕРЕНОС ПЛАГИНОВ, СКРИПТОВ И СОЗДАНИЕ СИМЛИНКОВ (C: -> D:)
 # =====================================================================
 
@@ -67,7 +67,79 @@ $RegKeys = @(
     "HKLM\SOFTWARE\WOW6432Node\iZotope", "HKLM\SOFTWARE\WOW6432Node\Native Instruments",
     "HKLM\SOFTWARE\WOW6432Node\Waves", "HKLM\SOFTWARE\WOW6432Node\Spectrasonics",
     "HKLM\SOFTWARE\WOW6432Node\XLN Audio", "HKLM\SOFTWARE\WOW6432Node\SoundToys",
-    "HKLM\SOFTWARE\WOW6432Node\Positive Grid"
+    "HKLM\SOFTWARE\WOW6432Node\Positive Grid",
+
+    # --- Добавлено под новые папки из $Mapping (BIAS, Digidesign, BorisFX, Red Giant, Maxon, ProductionCrate, RubberMonkey, RWBYTE/Rowbyte, redshift) ---
+    "HKCU\Software\BIAS", "HKCU\Software\Digidesign", "HKCU\Software\BorisFX",
+    "HKCU\Software\Red Giant", "HKCU\Software\Maxon", "HKCU\Software\ProductionCrate",
+    "HKCU\Software\RubberMonkey", "HKCU\Software\RWBYTE", "HKCU\Software\Rowbyte",
+    "HKCU\Software\redshift", "HKCU\Software\Otoy",
+
+    "HKLM\SOFTWARE\BIAS", "HKLM\SOFTWARE\Digidesign", "HKLM\SOFTWARE\BorisFX",
+    "HKLM\SOFTWARE\Red Giant", "HKLM\SOFTWARE\Maxon", "HKLM\SOFTWARE\ProductionCrate",
+    "HKLM\SOFTWARE\RubberMonkey", "HKLM\SOFTWARE\RWBYTE", "HKLM\SOFTWARE\Rowbyte",
+    "HKLM\SOFTWARE\redshift", "HKLM\SOFTWARE\Otoy",
+
+    "HKLM\SOFTWARE\WOW6432Node\BIAS", "HKLM\SOFTWARE\WOW6432Node\Digidesign",
+    "HKLM\SOFTWARE\WOW6432Node\BorisFX", "HKLM\SOFTWARE\WOW6432Node\Red Giant",
+    "HKLM\SOFTWARE\WOW6432Node\Maxon", "HKLM\SOFTWARE\WOW6432Node\ProductionCrate",
+    "HKLM\SOFTWARE\WOW6432Node\RubberMonkey", "HKLM\SOFTWARE\WOW6432Node\RWBYTE",
+    "HKLM\SOFTWARE\WOW6432Node\Rowbyte", "HKLM\SOFTWARE\WOW6432Node\redshift",
+    "HKLM\SOFTWARE\WOW6432Node\Otoy",
+
+    # --- Добавлено по результатам просмотра реального реестра (скриншоты HKCU/HKLM/WOW6432Node) ---
+    "HKCU\Software\AirMusicTech", "HKCU\Software\Cableguys", "HKCU\Software\aescripts.com",
+    "HKCU\Software\Sonic Charge", "HKCU\Software\SonicCat", "HKCU\Software\Roland Cloud",
+    "HKCU\Software\Voukoder", "HKCU\Software\Synchro Arts", "HKCU\Software\RedGiantSoftware",
+    "HKCU\Software\Lexicon", "HKCU\Software\Arturia", "HKCU\Software\XferRecords",
+    "HKCU\Software\Frischluft", "HKCU\Software\Imagineer Systems Ltd",
+    "HKCU\Software\Antares", "HKCU\Software\Avid", "HKCU\Software\D16 Group",
+    "HKCU\Software\FXhome", "HKCU\Software\FilmConvert", "HKCU\Software\GenArts",
+    "HKCU\Software\Slate Digital", "HKCU\Software\VideoCopilot", "HKCU\Software\Wavesfactory",
+    "HKCU\Software\dSONIQ", "HKCU\Software\illformed", "HKCU\Software\kiloHearts",
+    "HKCU\Software\oeksound", "HKCU\Software\vital", "HKCU\Software\GVST",
+    "HKCU\Software\Maag Audio", "HKCU\Software\Textevo", "HKCU\Software\Zynaptiq",
+    "HKCU\Software\AudioUTOPiA",
+
+    "HKLM\SOFTWARE\AirMusicTech", "HKLM\SOFTWARE\Cableguys",
+    "HKLM\SOFTWARE\RedGiantSoftware", "HKLM\SOFTWARE\Roland Cloud", "HKLM\SOFTWARE\Voukoder",
+    "HKLM\SOFTWARE\Synchro Arts", "HKLM\SOFTWARE\Lexicon", "HKLM\SOFTWARE\Arturia",
+    "HKLM\SOFTWARE\RE:Vision Effects", "HKLM\SOFTWARE\XferRecords", "HKLM\SOFTWARE\WIBU-SYSTEMS",
+    "HKLM\SOFTWARE\Blace Plugins", "HKLM\SOFTWARE\Frischluft", "HKLM\SOFTWARE\Imagineer Systems Ltd",
+    "HKLM\SOFTWARE\Antares", "HKLM\SOFTWARE\Avid", "HKLM\SOFTWARE\D16 Group",
+    "HKLM\SOFTWARE\FXhome", "HKLM\SOFTWARE\FilmConvert", "HKLM\SOFTWARE\GenArts",
+    "HKLM\SOFTWARE\Slate Digital", "HKLM\SOFTWARE\VideoCopilot", "HKLM\SOFTWARE\Wavesfactory",
+    "HKLM\SOFTWARE\dSONIQ", "HKLM\SOFTWARE\illformed", "HKLM\SOFTWARE\kiloHearts",
+    "HKLM\SOFTWARE\oeksound", "HKLM\SOFTWARE\vital", "HKLM\SOFTWARE\GVST",
+    "HKLM\SOFTWARE\Maag Audio", "HKLM\SOFTWARE\Textevo", "HKLM\SOFTWARE\Zynaptiq",
+    "HKLM\SOFTWARE\AudioUTOPiA",
+
+    "HKLM\SOFTWARE\WOW6432Node\AirMusicTech", "HKLM\SOFTWARE\WOW6432Node\Cableguys",
+    "HKLM\SOFTWARE\WOW6432Node\RedGiantSoftware",
+    "HKLM\SOFTWARE\WOW6432Node\Roland Cloud", "HKLM\SOFTWARE\WOW6432Node\Voukoder",
+    "HKLM\SOFTWARE\WOW6432Node\Synchro Arts", "HKLM\SOFTWARE\WOW6432Node\Lexicon",
+    "HKLM\SOFTWARE\WOW6432Node\Arturia", "HKLM\SOFTWARE\WOW6432Node\REvision",
+    "HKLM\SOFTWARE\WOW6432Node\XferRecords", "HKLM\SOFTWARE\WOW6432Node\WIBU-SYSTEMS",
+    "HKLM\SOFTWARE\WOW6432Node\Sonic Charge", "HKLM\SOFTWARE\WOW6432Node\SonicCat",
+    "HKLM\SOFTWARE\WOW6432Node\Frischluft", "HKLM\SOFTWARE\WOW6432Node\Imagineer Systems Ltd",
+    "HKLM\SOFTWARE\WOW6432Node\Antares", "HKLM\SOFTWARE\WOW6432Node\Avid",
+    "HKLM\SOFTWARE\WOW6432Node\D16 Group", "HKLM\SOFTWARE\WOW6432Node\FXhome",
+    "HKLM\SOFTWARE\WOW6432Node\FilmConvert", "HKLM\SOFTWARE\WOW6432Node\GenArts",
+    "HKLM\SOFTWARE\WOW6432Node\Slate Digital", "HKLM\SOFTWARE\WOW6432Node\VideoCopilot",
+    "HKLM\SOFTWARE\WOW6432Node\Wavesfactory", "HKLM\SOFTWARE\WOW6432Node\dSONIQ",
+    "HKLM\SOFTWARE\WOW6432Node\illformed", "HKLM\SOFTWARE\WOW6432Node\kiloHearts",
+    "HKLM\SOFTWARE\WOW6432Node\oeksound", "HKLM\SOFTWARE\WOW6432Node\vital",
+    "HKLM\SOFTWARE\WOW6432Node\GVST", "HKLM\SOFTWARE\WOW6432Node\Maag Audio",
+    "HKLM\SOFTWARE\WOW6432Node\Textevo", "HKLM\SOFTWARE\WOW6432Node\Zynaptiq",
+    "HKLM\SOFTWARE\WOW6432Node\AudioUTOPiA",
+
+    # --- Доп. страховка: продукт-папки/скрипт-тулзы, у которых регистр может отличаться от Mapping ---
+    "HKCU\Software\Rubber_Monkey_Software", "HKCU\Software\VoukoderPro",
+    "HKCU\Software\Valhalla DSP", "HKCU\Software\Waves Audio", "HKCU\Software\Realphones",
+    "HKCU\Software\Sixth Sample", "HKCU\Software\AEViewer", "HKCU\Software\DuAEF",
+    "HKCU\Software\BattleAxe", "HKCU\Software\MDS", "HKCU\Software\Motion tools",
+    "HKCU\Software\JerryFlow", "HKCU\Software\JerrySFX", "HKCU\Software\MisterHorse",
+    "HKCU\Software\LooksBuilder", "HKCU\Software\MaxonApp"
 )
 
 foreach ($key in $RegKeys) {
@@ -98,6 +170,18 @@ $Mapping = @(
     @{ Source = "C:\Program Files\dSONIQ";                Target = "$SoundBase\dSONIQ" },
     @{ Source = "C:\Program Files\iZotope";               Target = "$SoundBase\iZotope" },
 
+    # --- ЗВУКОВЫЕ ПЛАГИНЫ (x86) ---
+    @{ Source = "C:\Program Files (x86)\Waves";                     Target = "$SoundBase\Waves_x86" },
+    @{ Source = "C:\Program Files (x86)\BIAS";                      Target = "$SoundBase\BIAS_x86" },
+	
+	# --- ЗВУКОВЫЕ ПЛАГИНЫ (Common Files) ---
+	@{ Source = "C:\Program Files\Common Files\Avid";               Target = "$SoundBase\CommonFiles_Avid" },
+    @{ Source = "C:\Program Files\Common Files\Native Instruments"; Target = "$SoundBase\CommonFiles_NativeInstruments" },
+    @{ Source = "C:\Program Files\Common Files\Plugin Alliance";    Target = "$SoundBase\CommonFiles_PluginAlliance" },
+	@{ Source = "C:\Program Files (x86)\Common Files\BIAS";        Target = "$SoundBase\CommonFiles_BIAS_x86" },
+	@{ Source = "C:\Program Files (x86)\Common Files\Digidesign";  Target = "$SoundBase\CommonFiles_Digidesign_x86" },
+	@{ Source = "C:\Program Files (x86)\Common Files\WPAPI";       Target = "$SoundBase\CommonFiles_WPAPI_x86" },
+	
     # --- ВИДЕО ПЛАГИНЫ ---
     @{ Source = "C:\Program Files\Common Files\OFX";      Target = "$VideoBase\CommonFiles_OFX" },
     @{ Source = "C:\Program Files\Common Files\Adobe\Plug-Ins\CC"; Target = "$VideoBase\Adobe_Plugins_CC" },
@@ -105,7 +189,15 @@ $Mapping = @(
     @{ Source = "C:\Program Files\FilmConvert";           Target = "$VideoBase\FilmConvert" },
     @{ Source = "C:\Program Files\REVisionEffects";       Target = "$VideoBase\REVisionEffects" },
     @{ Source = "C:\Program Files\Red Giant";             Target = "$VideoBase\Red Giant" },
+	@{ Source = "C:\Program Files\ProductionCrate";            Target = "$VideoBase\ProductionCrate" },
 
+    # --- ВИДЕО ПЛАГИНЫ (доп.) ---
+    @{ Source = "C:\Program Files\Adobe\Common\Plug-ins\7.0\MediaCore";                          Target = "$VideoBase\Adobe_MediaCore_Plugins" },
+    @{ Source = "C:\Program Files\Adobe\Adobe After Effects 2026\Support Files\Plug-ins";        Target = "$VideoBase\AfterEffects_Native_Plugins" },
+    @{ Source = "D:\Program Files\Adobe After Effects\Adobe After Effects 2026\Support Files\Plug-ins"; Target = "$VideoBase\AfterEffects_Native_Plugins" },
+    @{ Source = "C:\Program Files\Maxon";                     Target = "$VideoBase\Maxon" },
+    @{ Source = "C:\Program Files\Maxon Cinema 4D 2026";       Target = "$VideoBase\Maxon Cinema 4D 2026" },
+	
     # --- СКРИПТЫ И РАСШИРЕНИЯ AFTER EFFECTS ---
     @{ Source = "C:\Program Files (x86)\Common Files\Adobe\CEP\extensions"; Target = $ScriptExts },
     @{ Source = "C:\Program Files (x86)\aescripts + aeplugins"; Target = "D:\Program Files (x86)\aescripts + aeplugins" },
@@ -133,6 +225,26 @@ $Mapping = @(
     @{ Source = "C:\ProgramData\aescripts";           Target = "D:\ProgramData\aescripts" },
     @{ Source = "C:\ProgramData\kiloHearts";          Target = "D:\ProgramData\kiloHearts" },
     @{ Source = "C:\ProgramData\oeksound";            Target = "D:\ProgramData\oeksound" },
+    @{ Source = "C:\ProgramData\RubberMonkey";                    Target = "D:\ProgramData\RubberMonkey" },
+	@{ Source = "C:\ProgramData\RWBYTE";                          Target = "D:\ProgramData\RWBYTE" },
+	@{ Source = "C:\ProgramData\redshift";                        Target = "D:\ProgramData\redshift" },
+	@{ Source = "C:\ProgramData\ValhallaDelay";                Target = "D:\ProgramData\ValhallaDelay" },
+    @{ Source = "C:\ProgramData\ValhallaFutureVerb";           Target = "D:\ProgramData\ValhallaFutureVerb" },
+    @{ Source = "C:\ProgramData\ValhallaPlate";                Target = "D:\ProgramData\ValhallaPlate" },
+    @{ Source = "C:\ProgramData\ValhallaRoom";                 Target = "D:\ProgramData\ValhallaRoom" },
+    @{ Source = "C:\ProgramData\ValhallaRoomPreferences";      Target = "D:\ProgramData\ValhallaRoomPreferences" },
+    @{ Source = "C:\ProgramData\ValhallaShimmer";              Target = "D:\ProgramData\ValhallaShimmer" },
+    @{ Source = "C:\ProgramData\ValhallaUberMod";              Target = "D:\ProgramData\ValhallaUberMod" },
+    @{ Source = "C:\ProgramData\ValhallaVintageVerb";          Target = "D:\ProgramData\ValhallaVintageVerb" },
+    @{ Source = "C:\ProgramData\ValhallaVintageVerbPreferences"; Target = "D:\ProgramData\ValhallaVintageVerbPreferences" },
+    @{ Source = "C:\ProgramData\AudioUTOPiA";                  Target = "D:\ProgramData\AudioUTOPiA" },
+    @{ Source = "C:\ProgramData\Sixth Sample";                 Target = "D:\ProgramData\Sixth Sample" },
+    @{ Source = "C:\ProgramData\com.aescripts.zxpinstaller";   Target = "D:\ProgramData\com.aescripts.zxpinstaller" },
+    @{ Source = "C:\ProgramData\IK Multimedia";                Target = "D:\ProgramData\IK Multimedia" },
+    @{ Source = "C:\ProgramData\iZotope";                      Target = "D:\ProgramData\iZotope" },
+    @{ Source = "C:\ProgramData\Positive Grid";                Target = "D:\ProgramData\Positive Grid" },
+    @{ Source = "C:\ProgramData\SoundToys";                    Target = "D:\ProgramData\SoundToys" },
+    @{ Source = "C:\ProgramData\Cytomic";                      Target = "D:\ProgramData\Cytomic" },
 
     # --- APPDATA ROAMING ---
     @{ Source = "C:\Users\$TargetUser\AppData\Roaming\AEViewer";           Target = "D:\Users\$TargetUser\AppData\Roaming\AEViewer" },
@@ -163,6 +275,34 @@ $Mapping = @(
     @{ Source = "C:\Users\$TargetUser\AppData\Roaming\aescripts";          Target = "D:\Users\$TargetUser\AppData\Roaming\aescripts" },
     @{ Source = "C:\Users\$TargetUser\AppData\Roaming\iZotope";            Target = "D:\Users\$TargetUser\AppData\Roaming\iZotope" },
     @{ Source = "C:\Users\$TargetUser\AppData\Roaming\vital";              Target = "D:\Users\$TargetUser\AppData\Roaming\vital" },
+	@{ Source = "C:\Users\$TargetUser\AppData\Roaming\com.aescripts.updater";     Target = "D:\Users\$TargetUser\AppData\Roaming\com.aescripts.updater" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\Glitch2";                   Target = "D:\Users\$TargetUser\AppData\Roaming\Glitch2" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\MDS";                       Target = "D:\Users\$TargetUser\AppData\Roaming\MDS" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\SonicCat";                  Target = "D:\Users\$TargetUser\AppData\Roaming\SonicCat" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\Waves Audio";               Target = "D:\Users\$TargetUser\AppData\Roaming\Waves Audio" },
+	@{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaDelay";                Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaDelay" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaFutureVerb";           Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaFutureVerb" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaPlate";                Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaPlate" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaRoom";                 Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaRoom" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaRoomPreferences";      Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaRoomPreferences" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaShimmer";              Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaShimmer" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaUberMod";              Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaUberMod" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaVintageVerb";          Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaVintageVerb" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaVintageVerbPreferences"; Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaVintageVerbPreferences" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\productioncrate";              Target = "D:\Users\$TargetUser\AppData\Roaming\productioncrate" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\boris-fx-direct";              Target = "D:\Users\$TargetUser\AppData\Roaming\boris-fx-direct" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\.com.uwu2x-pro-9.0.cep";       Target = "D:\Users\$TargetUser\AppData\Roaming\.com.uwu2x-pro-9.0.cep" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\XLN Audio";        Target = "D:\Users\$TargetUser\AppData\Roaming\XLN Audio" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\SoundToys";        Target = "D:\Users\$TargetUser\AppData\Roaming\SoundToys" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\u-he";             Target = "D:\Users\$TargetUser\AppData\Roaming\u-he" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\Cytomic";          Target = "D:\Users\$TargetUser\AppData\Roaming\Cytomic" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\illformed";       Target = "D:\Users\$TargetUser\AppData\Roaming\illformed" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\GVST";             Target = "D:\Users\$TargetUser\AppData\Roaming\GVST" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\Lexicon";          Target = "D:\Users\$TargetUser\AppData\Roaming\Lexicon" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\Maag Audio";       Target = "D:\Users\$TargetUser\AppData\Roaming\Maag Audio" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\Positive Grid";    Target = "D:\Users\$TargetUser\AppData\Roaming\Positive Grid" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\dSONIQ";           Target = "D:\Users\$TargetUser\AppData\Roaming\dSONIQ" },
+
 
     # --- APPDATA LOCAL ---
     @{ Source = "C:\Users\$TargetUser\AppData\Local\Adobe";                Target = "D:\Users\$TargetUser\AppData\Local\Adobe" },
@@ -194,74 +334,27 @@ $Mapping = @(
     @{ Source = "C:\Users\$TargetUser\AppData\Local\ValhallaUberMod";              Target = "D:\Users\$TargetUser\AppData\Local\ValhallaUberMod" },
     @{ Source = "C:\Users\$TargetUser\AppData\Local\ValhallaVintageVerb";          Target = "D:\Users\$TargetUser\AppData\Local\ValhallaVintageVerb" },
     @{ Source = "C:\Users\$TargetUser\AppData\Local\ValhallaVintageVerbPreferences"; Target = "D:\Users\$TargetUser\AppData\Local\ValhallaVintageVerbPreferences" },
-
-    # --- ЗВУКОВЫЕ ПЛАГИНЫ (доп., найдено по CSV-аудиту) ---
-    @{ Source = "C:\Program Files (x86)\Waves";                     Target = "$SoundBase\Waves_x86" },
-    @{ Source = "C:\Program Files\Common Files\Avid";               Target = "$SoundBase\CommonFiles_Avid" },
-    @{ Source = "C:\Program Files\Common Files\Native Instruments"; Target = "$SoundBase\CommonFiles_NativeInstruments" },
-    @{ Source = "C:\Program Files\Common Files\Plugin Alliance";    Target = "$SoundBase\CommonFiles_PluginAlliance" },
-    @{ Source = "C:\Program Files (x86)\BIAS";                      Target = "$SoundBase\BIAS_x86" },
-
-    # --- ВИДЕО ПЛАГИНЫ (доп.) ---
-    @{ Source = "C:\Program Files\Adobe\Common\Plug-ins\7.0\MediaCore";                          Target = "$VideoBase\Adobe_MediaCore_Plugins" },
-    @{ Source = "C:\Program Files\Adobe\Adobe After Effects 2026\Support Files\Plug-ins";        Target = "$VideoBase\AfterEffects_Native_Plugins" },
-    @{ Source = "D:\Program Files\Adobe After Effects\Adobe After Effects 2026\Support Files\Plug-ins"; Target = "$VideoBase\AfterEffects_Native_Plugins" },
-    @{ Source = "C:\Program Files\Maxon";                     Target = "$VideoBase\Maxon" },
-    @{ Source = "C:\Program Files\Maxon Cinema 4D 2026";       Target = "$VideoBase\Maxon Cinema 4D 2026" },
-    @{ Source = "C:\Program Files\ProductionCrate";            Target = "$VideoBase\ProductionCrate" },
+	@{ Source = "C:\Users\$TargetUser\AppData\Local\BorisFX";                     Target = "D:\Users\$TargetUser\AppData\Local\BorisFX" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Local\FlowframesInstallerTemp";     Target = "D:\Users\$TargetUser\AppData\Local\FlowframesInstallerTemp" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Local\Maxon";                       Target = "D:\Users\$TargetUser\AppData\Local\Maxon" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Local\MaxonApp";                    Target = "D:\Users\$TargetUser\AppData\Local\MaxonApp" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Local\Red Giant";                   Target = "D:\Users\$TargetUser\AppData\Local\Red Giant" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Local\VideoCopilot";                Target = "D:\Users\$TargetUser\AppData\Local\VideoCopilot" },
+    @{ Source = "C:\Users\$TargetUser\AppData\Local\Xfer";                        Target = "D:\Users\$TargetUser\AppData\Local\Xfer" },
 
     # --- СКРИПТЫ И РАСШИРЕНИЯ AFTER EFFECTS (доп. — 64-битный CEP, UXP, автозапуск) ---
-    @{ Source = "D:\Program Files\Adobe After Effects\Adobe After Effects 2026\Support Files\Scripts"; Target = $ScriptsFolder },
-    @{ Source = "C:\Program Files\Adobe\Adobe After Effects 2026\Support Files\Scripts";               Target = $ScriptsFolder },
+    # ВАЖНО: переносим только ScriptUI Panels и Startup (сюда кладут файлы сторонние авторы),
+    # а не всю папку Scripts целиком — внутри неё лежит ещё и "Sample Scripts" от самой Adobe,
+    # которые лучше не трогать симлинком (риск при repair-install/деинсталляции AE).
+    @{ Source = "D:\Program Files\Adobe After Effects\Adobe After Effects 2026\Support Files\Scripts\ScriptUI Panels"; Target = "$ScriptsFolder\ScriptUI Panels" },
+    @{ Source = "C:\Program Files\Adobe\Adobe After Effects 2026\Support Files\Scripts\ScriptUI Panels";               Target = "$ScriptsFolder\ScriptUI Panels" },
+    @{ Source = "D:\Program Files\Adobe After Effects\Adobe After Effects 2026\Support Files\Scripts\Startup"; Target = "$ScriptsFolder\Startup" },
+    @{ Source = "C:\Program Files\Adobe\Adobe After Effects 2026\Support Files\Scripts\Startup";               Target = "$ScriptsFolder\Startup" },
     @{ Source = "C:\Program Files\Common Files\Adobe\CEP\extensions";       Target = "D:\Files For All\Documents\Scripts For All\Video Scripts\extensions" },
     @{ Source = "C:\Program Files\Common Files\Adobe\UXP\extensions";       Target = "D:\Files For All\Documents\Scripts For All\Video Scripts\UXP extensions" },
     @{ Source = "C:\Program Files\Common Files\Adobe\Startup Scripts CC";   Target = "D:\Files For All\Documents\Scripts For All\Video Scripts\Startup Scripts CC" },
 
-    # --- PROGRAMDATA (доп. — отдельные папки плагинов, не покрытые общим вендором) ---
-    @{ Source = "C:\ProgramData\ValhallaDelay";                Target = "D:\ProgramData\ValhallaDelay" },
-    @{ Source = "C:\ProgramData\ValhallaFutureVerb";           Target = "D:\ProgramData\ValhallaFutureVerb" },
-    @{ Source = "C:\ProgramData\ValhallaPlate";                Target = "D:\ProgramData\ValhallaPlate" },
-    @{ Source = "C:\ProgramData\ValhallaRoom";                 Target = "D:\ProgramData\ValhallaRoom" },
-    @{ Source = "C:\ProgramData\ValhallaRoomPreferences";      Target = "D:\ProgramData\ValhallaRoomPreferences" },
-    @{ Source = "C:\ProgramData\ValhallaShimmer";              Target = "D:\ProgramData\ValhallaShimmer" },
-    @{ Source = "C:\ProgramData\ValhallaUberMod";              Target = "D:\ProgramData\ValhallaUberMod" },
-    @{ Source = "C:\ProgramData\ValhallaVintageVerb";          Target = "D:\ProgramData\ValhallaVintageVerb" },
-    @{ Source = "C:\ProgramData\ValhallaVintageVerbPreferences"; Target = "D:\ProgramData\ValhallaVintageVerbPreferences" },
-    @{ Source = "C:\ProgramData\AudioUTOPiA";                  Target = "D:\ProgramData\AudioUTOPiA" },
-    @{ Source = "C:\ProgramData\SafeNet Sentinel";             Target = "D:\ProgramData\SafeNet Sentinel" },
-    @{ Source = "C:\ProgramData\Sixth Sample";                 Target = "D:\ProgramData\Sixth Sample" },
-    @{ Source = "C:\ProgramData\com.aescripts.zxpinstaller";   Target = "D:\ProgramData\com.aescripts.zxpinstaller" },
-    @{ Source = "C:\ProgramData\IK Multimedia";                Target = "D:\ProgramData\IK Multimedia" },
-    @{ Source = "C:\ProgramData\iZotope";                      Target = "D:\ProgramData\iZotope" },
-    @{ Source = "C:\ProgramData\Positive Grid";                Target = "D:\ProgramData\Positive Grid" },
-    @{ Source = "C:\ProgramData\SoundToys";                    Target = "D:\ProgramData\SoundToys" },
-    @{ Source = "C:\ProgramData\Cytomic";                      Target = "D:\ProgramData\Cytomic" },
-
-    # --- APPDATA ROAMING (доп.) ---
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaDelay";                Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaDelay" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaFutureVerb";           Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaFutureVerb" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaPlate";                Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaPlate" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaRoom";                 Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaRoom" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaRoomPreferences";      Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaRoomPreferences" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaShimmer";              Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaShimmer" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaUberMod";              Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaUberMod" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaVintageVerb";          Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaVintageVerb" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\ValhallaVintageVerbPreferences"; Target = "D:\Users\$TargetUser\AppData\Roaming\ValhallaVintageVerbPreferences" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\productioncrate";              Target = "D:\Users\$TargetUser\AppData\Roaming\productioncrate" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\boris-fx-direct";              Target = "D:\Users\$TargetUser\AppData\Roaming\boris-fx-direct" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\.com.uwu2x-pro-9.0.cep";       Target = "D:\Users\$TargetUser\AppData\Roaming\.com.uwu2x-pro-9.0.cep" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\XLN Audio";        Target = "D:\Users\$TargetUser\AppData\Roaming\XLN Audio" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\SoundToys";        Target = "D:\Users\$TargetUser\AppData\Roaming\SoundToys" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\u-he";             Target = "D:\Users\$TargetUser\AppData\Roaming\u-he" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\Cytomic";          Target = "D:\Users\$TargetUser\AppData\Roaming\Cytomic" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\illformed";       Target = "D:\Users\$TargetUser\AppData\Roaming\illformed" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\GVST";             Target = "D:\Users\$TargetUser\AppData\Roaming\GVST" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\Lexicon";          Target = "D:\Users\$TargetUser\AppData\Roaming\Lexicon" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\Maag Audio";       Target = "D:\Users\$TargetUser\AppData\Roaming\Maag Audio" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\Positive Grid";    Target = "D:\Users\$TargetUser\AppData\Roaming\Positive Grid" },
-    @{ Source = "C:\Users\$TargetUser\AppData\Roaming\dSONIQ";           Target = "D:\Users\$TargetUser\AppData\Roaming\dSONIQ" },
-
-    # --- DOCUMENTS (новая категория — раньше вообще не переносилась) ---
+    # --- DOCUMENTS ---
     @{ Source = "C:\Users\$TargetUser\Documents\Red Giant";  Target = "D:\Users\$TargetUser\Documents\Red Giant" },
     @{ Source = "C:\Users\$TargetUser\Documents\Zynaptiq";   Target = "D:\Users\$TargetUser\Documents\Zynaptiq" },
     @{ Source = "C:\Users\$TargetUser\Documents\JerryFlow";  Target = "D:\Users\$TargetUser\Documents\JerryFlow" },
@@ -275,6 +368,42 @@ $Mapping = @(
 	@{ Source = "C:\Users\Public\Documents\NI Resources";          Target = "D:\Users\Public\Documents\NI Resources" },
 	@{ Source = "C:\Users\Public\Documents\Soundtoys";             Target = "D:\Users\Public\Documents\Soundtoys" }
 )
+
+# 3.5. ДИНАМИЧЕСКИЙ ПОИСК И ОСТАНОВКА СЛУЖБ, ЧЬИ ФАЙЛЫ ЛЕЖАТ В ПЕРЕНОСИМЫХ ПАПКАХ
+# (решает проблему с Red Giant Service, Maxon Service и любыми другими похожими службами:
+#  их бинарник блокирует файл во время robocopy /MOVE, из-за чего Junction не создаётся.
+#  Вместо жёстко прописанных имён служб ищем ЛЮБУЮ службу, чей путь к exe начинается
+#  с одного из $Mapping.Source — и просто останавливаем её перед переносом.
+#  После создания Junction реестр службы (ImagePath) не меняется и продолжает указывать
+#  на C:\..., а NTFS reparse point прозрачно перенаправляет на D:\... — переустановка не нужна.)
+Write-Host "`n>>> Ищем службы, чьи файлы лежат в переносимых папках..." -ForegroundColor Yellow
+
+$StoppedServices = @()
+$AllServices = Get-CimInstance Win32_Service -ErrorAction SilentlyContinue | Where-Object { $_.PathName }
+
+foreach ($item in $Mapping) {
+    $src = $item.Source.TrimEnd('\')
+    foreach ($svc in $AllServices) {
+        # PathName может быть в кавычках и содержать аргументы — берём только путь к exe
+        $exePath = $svc.PathName
+        if ($exePath -match '^"([^"]+)"') { $exePath = $Matches[1] } else { $exePath = ($exePath -split ' -')[0].Trim() }
+
+        if ($exePath -like "$src\*" -or $exePath -eq $src) {
+            if ($svc.State -eq 'Running') {
+                Write-Host "  [SERVICE] Останавливаю $($svc.Name) ($($svc.DisplayName)) — использует $src" -ForegroundColor Cyan
+                Stop-Service -Name $svc.Name -Force -ErrorAction SilentlyContinue
+                $StoppedServices += $svc.Name
+            }
+        }
+    }
+}
+
+if ($StoppedServices.Count -eq 0) {
+    Write-Host "   Служб, привязанных к переносимым папкам, не найдено." -ForegroundColor Green
+} else {
+    Write-Host "   Остановлено служб: $($StoppedServices.Count)" -ForegroundColor Green
+    Start-Sleep -Seconds 2
+}
 
 # 4. ПЕРЕНОС И СОЗДАНИЕ СИМЛИНКОВ
 Write-Host "`n>>> Переносим папки и создаем Junction-симлинки..." -ForegroundColor Yellow
@@ -454,6 +583,20 @@ if ($UnmappedReport.Count -gt 0) {
 $RestoreCommands += 'Write-Host "`n[УСПЕХ] Все ключи и симлинки успешно восстановлены!" -ForegroundColor Green'
 $RestoreCommands += 'Write-Host "[ИНФО] Рекомендуется перезагрузить компьютер для применения всех ключей реестра." -ForegroundColor Yellow'
 [System.IO.File]::WriteAllLines($RestoreScriptPath, $RestoreCommands, [System.Text.Encoding]::UTF8)
+
+# 7. ЗАПУСК ОБРАТНО СЛУЖБ, ОСТАНОВЛЕННЫХ НА ШАГЕ 3.5
+# Junction уже создан, ImagePath службы не менялся — можно просто запускать как раньше.
+if ($StoppedServices.Count -gt 0) {
+    Write-Host "`n>>> Запускаем обратно ранее остановленные службы..." -ForegroundColor Yellow
+    foreach ($svcName in ($StoppedServices | Select-Object -Unique)) {
+        try {
+            Start-Service -Name $svcName -ErrorAction Stop
+            Write-Host "   [OK] $svcName запущена." -ForegroundColor Green
+        } catch {
+            Write-Host "   [WARN] Не удалось запустить $svcName автоматически — возможно, запускается вручную или при первом обращении. Проверь после перезагрузки." -ForegroundColor DarkYellow
+        }
+    }
+}
 
 Write-Host "`n=======================================================" -ForegroundColor Green
 Write-Host " ВСЁ ГОТОВО! Перенос завершен успешно." -ForegroundColor Green
